@@ -1,24 +1,44 @@
-# README
+# Привет
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  Скопируй и запусти команду в терминале
 
-Things you may want to cover:
+* git clone git@github.com:Tavbulatov/uchi.git
 
-* Ruby version
+* docker compose up
 
-* System dependencies
+  Запусти Postman
 
-* Configuration
+* POST http://localhost:3000/students
 
-* Database creation
+- Для регистрации и входа в систему
 
-* Database initialization
+  { "student": { "first_name": "Alikhan", "last_name": "Tavbulatov",
+                 "surname": "Muratkhanovich", "classroom_id": "1",
+                 "school_id": "1", "email": "ali@mail.ru",
+                 "password": "123123" }}
 
-* How to run the test suite
+* DELETE http://localhost:3000/students/sign_out
 
-* Services (job queues, cache servers, search engines, etc.)
+- Для выхода из системы в заголовке нужно указать токен с ключом Aurtorization (его надо взять из Headers после регистрации и use для каждого запроса )
 
-* Deployment instructions
+ либо  отправить данные напр. - { "student": { "email": "ali@mail.ru", "password": "123123" }}
 
-* ...
+* POST http://localhost:3000/students/sign_in
+
+- Для аутентификации ранее зарегистрированного студента
+
+  {"student": { "email": "ali@mail.ru", "password": "123123" }}
+
+* GET http://localhost:3000/schools/1/classrooms
+
+- Для получения всех Классов из школы
+
+* GET http://localhost:3000/schools/1/classrooms/1/students
+
+- Для получения всех Студентов
+
+* DELETE http://localhost:3000/students
+
+- Для удаления студента
+
+  { "student_id": "1" }
