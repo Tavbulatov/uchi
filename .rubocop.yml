@@ -1,0 +1,19 @@
+# .rubocop.yml
+
+require:
+  - rubocop-factory_bot
+  - rubocop-rails
+  - rubocop-rspec
+
+# .rubocop.yml
+
+Style/Documentation:
+  Enabled: false
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+Rails/NotNullColumn:
+  Enabled: false
+RSpec/InstanceVariable:
+  Enabled: false
+Metrics/MethodLength:
+  Max: 20
